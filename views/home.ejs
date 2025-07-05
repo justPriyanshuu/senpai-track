@@ -17,54 +17,17 @@
     <div class="container">
       <%- include('partials/navbar') %>
       <div class="trending-lists">
+        <% for(let anime of animes){ %>
         <div class="anime-card">
-          <img
-            src="https://images5.alphacoders.com/131/1319289.jpeg"
-            class="card-img"
-          />
-          <h3 class="card-title">Bleach</h3>
-          <p class="card-rating">9/10</p>
-          <p class="card-genre">supernatural, fantasy, action</p>
+          <img src="<%= anime.images.jpg.image_url %>" class="card-img" />
+          <h3 class="card-title"><%= anime.title %></h3>
+          <p class="card-rating"><%= anime.score %>/10</p>
+          <p class="card-genre"><%= anime.genres.map(g=>g.name).join(',') %></p>
           <button class="card-button">
             <i class="fa-regular fa-heart"></i>
           </button>
         </div>
-        <div class="anime-card">
-          <img
-            src="https://images5.alphacoders.com/131/1319289.jpeg"
-            class="card-img"
-          />
-          <h3 class="card-title">Bleach</h3>
-          <p class="card-rating">9/10</p>
-          <p class="card-genre">supernatural, fantasy, action</p>
-          <button class="card-button">
-            <i class="fa-regular fa-heart"></i>
-          </button>
-        </div>
-        <div class="anime-card">
-          <img
-            src="https://images5.alphacoders.com/131/1319289.jpeg"
-            class="card-img"
-          />
-          <h3 class="card-title">Bleach</h3>
-          <p class="card-rating">9/10</p>
-          <p class="card-genre">supernatural, fantasy, action</p>
-          <button class="card-button">
-            <i class="fa-regular fa-heart"></i>
-          </button>
-        </div>
-        <div class="anime-card">
-          <img
-            src="https://images5.alphacoders.com/131/1319289.jpeg"
-            class="card-img"
-          />
-          <h3 class="card-title">Bleach</h3>
-          <p class="card-rating">9/10</p>
-          <p class="card-genre">supernatural, fantasy, action</p>
-          <button class="card-button">
-            <i class="fa-regular fa-heart"></i>
-          </button>
-        </div>
+        <% } %>
       </div>
     </div>
   </body>
